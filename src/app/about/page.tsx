@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { values } from "@/lib/site";
+import { serviceAreaCities, site, values } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About | Pinky's Garage Doors",
@@ -70,6 +70,27 @@ export default function AboutPage() {
             prices, and a job done right, every time.
           </p>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div className="text-center">
+          <h2 className="text-2xl font-extrabold uppercase sm:text-3xl">
+            Find a Pinky&apos;s <span className="text-rose">Expert Near You</span>
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-ink/70">
+            We proudly serve homeowners and businesses throughout {site.serviceArea.replace("Serving ", "")}, including:
+          </p>
+        </div>
+        <div className="mt-10 columns-2 gap-8 sm:columns-3 lg:columns-4">
+          {serviceAreaCities.map((city) => (
+            <p key={city} className="mb-3 break-inside-avoid text-center sm:text-left">
+              {city}
+            </p>
+          ))}
+        </div>
+        <p className="mt-10 text-center text-sm text-ink/60">
+          Don&apos;t see your city listed? <a href={site.phoneHref} className="font-semibold text-rose">Give us a call</a>—we may still be able to help.
+        </p>
       </section>
     </>
   );

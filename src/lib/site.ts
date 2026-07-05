@@ -12,6 +12,26 @@ export const site = {
   ],
 };
 
+export const serviceAreaCities = [
+  "Avondale",
+  "Buckeye",
+  "Cave Creek",
+  "Chandler",
+  "Fountain Hills",
+  "Gilbert",
+  "Glendale",
+  "Goodyear",
+  "Mesa",
+  "Paradise Valley",
+  "Peoria",
+  "Phoenix",
+  "Queen Creek",
+  "Scottsdale",
+  "Sun City",
+  "Surprise",
+  "Tempe",
+];
+
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
