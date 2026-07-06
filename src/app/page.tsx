@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { serviceIconMap, ClockIcon, ShieldIcon, StarIcon, CreditCardIcon } from "@/components/icons";
+import ServiceAreaMap from "@/components/ServiceAreaMap";
 import { services, site, testimonials, trustBar, values } from "@/lib/site";
 
 const trustIcons = [ClockIcon, ShieldIcon, StarIcon, CreditCardIcon];
@@ -95,6 +96,21 @@ export default function Home() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Service Area */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-extrabold uppercase sm:text-4xl">
+            Proudly Serving the <span className="text-rose">Phoenix Metro</span>
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-ink/70">
+            From Buckeye to Queen Creek, we&apos;ve got the Valley covered.
+          </p>
+        </div>
+        <div className="mx-auto max-w-3xl">
+          <ServiceAreaMap />
         </div>
       </section>
 

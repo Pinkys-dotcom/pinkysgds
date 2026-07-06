@@ -32,6 +32,34 @@ export const serviceAreaCities = [
   "Tempe",
 ];
 
+// Approximate relative positions on a stylized (non-geographic-precision) map,
+// laid out on a 700x500 viewBox. labelDir controls which side the text sits on.
+export const serviceAreaMapPoints: {
+  name: string;
+  x: number;
+  y: number;
+  labelDir: "top" | "bottom" | "left" | "right";
+  major?: boolean;
+}[] = [
+  { name: "Surprise", x: 110, y: 90, labelDir: "right" },
+  { name: "Sun City", x: 170, y: 145, labelDir: "bottom" },
+  { name: "Peoria", x: 270, y: 150, labelDir: "top" },
+  { name: "Glendale", x: 330, y: 220, labelDir: "left" },
+  { name: "Goodyear", x: 180, y: 300, labelDir: "left" },
+  { name: "Avondale", x: 250, y: 300, labelDir: "bottom" },
+  { name: "Buckeye", x: 100, y: 330, labelDir: "left" },
+  { name: "Phoenix", x: 380, y: 250, labelDir: "right", major: true },
+  { name: "Cave Creek", x: 430, y: 55, labelDir: "top" },
+  { name: "Paradise Valley", x: 475, y: 185, labelDir: "top" },
+  { name: "Scottsdale", x: 545, y: 210, labelDir: "right" },
+  { name: "Fountain Hills", x: 610, y: 175, labelDir: "top" },
+  { name: "Tempe", x: 450, y: 325, labelDir: "bottom" },
+  { name: "Mesa", x: 535, y: 315, labelDir: "right" },
+  { name: "Chandler", x: 480, y: 385, labelDir: "bottom" },
+  { name: "Gilbert", x: 555, y: 390, labelDir: "right" },
+  { name: "Queen Creek", x: 605, y: 435, labelDir: "bottom" },
+];
+
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
