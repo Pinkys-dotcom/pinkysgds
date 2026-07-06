@@ -4,9 +4,9 @@ import { useState, type FormEvent } from "react";
 import { site } from "@/lib/site";
 
 export default function ContactForm() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -14,12 +14,19 @@ export default function ContactForm() {
     const phone = String(data.get("phone") ?? "");
     const message = String(data.get("message") ?? "");
 
-    const subject = encodeURIComponent(`New estimate request from ${name || "website visitor"}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nPhone: ${phone}\n\nMessage:\n${message}`
-    );
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
-    setSent(true);
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, message }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("sent");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -62,16 +69,30 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="w-full rounded-md bg-rose px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-rose-dark transition-colors sm:w-auto"
+        disabled={status === "sending"}
+        className="w-full rounded-md bg-rose px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-rose-dark transition-colors disabled:opacity-60 sm:w-auto"
       >
-        Send Request
+        {status === "sending" ? "Sending…" : "Send Request"}
       </button>
-      {sent && (
+      {status === "sent" && (
         <p className="text-sm text-ink/70">
-          Opening your email client to send this request. Prefer to call?{" "}
+          Thanks! Your request has been sent—we&apos;ll get back to you shortly. Prefer to call?{" "}
           <a href={site.phoneHref} className="font-semibold text-rose">
             {site.phone}
           </a>
+        </p>
+      )}
+      {status === "error" && (
+        <p className="text-sm text-ink/70">
+          Something went wrong sending your request. Please call us instead at{" "}
+          <a href={site.phoneHref} className="font-semibold text-rose">
+            {site.phone}
+          </a>
+          {" "}or email{" "}
+          <a href={`mailto:${site.email}`} className="font-semibold text-rose">
+            {site.email}
+          </a>
+          .
         </p>
       )}
     </form>
