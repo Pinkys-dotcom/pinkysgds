@@ -50,10 +50,10 @@ export default function AboutPage() {
         </div>
         <div className="rounded-lg bg-ink-soft p-8 flex justify-center">
           <Image
-            src="/images/mascot-v2.png"
+            src="/images/mascot-crossed.png"
             alt="Pinky, the Pinky's Garage Doors mascot"
-            width={280}
-            height={720}
+            width={427}
+            height={1176}
             className="h-[28rem] w-auto"
           />
         </div>
