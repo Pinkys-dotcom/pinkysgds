@@ -48,7 +48,7 @@ export default function AboutPage() {
             Get a Free Estimate
           </Link>
         </div>
-        <div className="rounded-lg bg-ink-soft p-8 flex justify-center">
+        <div className="flex justify-center">
           <Image
             src="/images/mascot-crossed.png"
             alt="Pinky, the Pinky's Garage Doors mascot"
