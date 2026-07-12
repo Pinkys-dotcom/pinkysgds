@@ -52,8 +52,8 @@ export default function AboutPage() {
           <Image
             src="/images/mascot-bulldog.png"
             alt="Pinky, the Pinky's Garage Doors bulldog mascot"
-            width={232}
-            height={241}
+            width={1010}
+            height={1027}
             className="h-72 w-auto"
           />
         </div>

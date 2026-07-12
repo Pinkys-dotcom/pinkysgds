@@ -120,8 +120,8 @@ export default function Home() {
           <Image
             src="/images/mascot-bulldog.png"
             alt="Pinky, the Pinky's Garage Doors bulldog mascot"
-            width={232}
-            height={241}
+            width={1010}
+            height={1027}
             className="mx-auto h-48 w-auto sm:h-56 lg:h-64"
           />
           <div>
