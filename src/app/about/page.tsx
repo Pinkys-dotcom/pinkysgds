@@ -50,11 +50,11 @@ export default function AboutPage() {
         </div>
         <div className="flex justify-center">
           <Image
-            src="/images/mascot-crossed.png"
-            alt="Pinky, the Pinky's Garage Doors mascot"
-            width={427}
-            height={1176}
-            className="h-[28rem] w-auto"
+            src="/images/mascot-bulldog.png"
+            alt="Pinky, the Pinky's Garage Doors bulldog mascot"
+            width={232}
+            height={241}
+            className="h-72 w-auto"
           />
         </div>
       </section>

@@ -118,11 +118,11 @@ export default function Home() {
       <section className="bg-ink-soft text-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 grid grid-cols-1 items-center gap-10 lg:grid-cols-[auto_1fr]">
           <Image
-            src="/images/mascot-shaka.png"
-            alt="Pinky, the Pinky's Garage Doors mascot"
-            width={505}
-            height={1181}
-            className="mx-auto h-72 w-auto sm:h-96 lg:h-[26rem]"
+            src="/images/mascot-bulldog.png"
+            alt="Pinky, the Pinky's Garage Doors bulldog mascot"
+            width={232}
+            height={241}
+            className="mx-auto h-48 w-auto sm:h-56 lg:h-64"
           />
           <div>
             <h2 className="text-3xl font-extrabold uppercase sm:text-4xl">
