@@ -3,10 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { serviceAreaCities, site, values } from "@/lib/site";
 
+const title = "About | Pinky's Garage Doors";
+const description = "Meet Pinky's Garage Doors—Phoenix, AZ's honest, hard-working garage door team.";
+
 export const metadata: Metadata = {
-  title: "About | Pinky's Garage Doors",
-  description:
-    "Meet Pinky's Garage Doors—Phoenix, AZ's honest, hard-working garage door team.",
+  title,
+  description,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title,
+    description,
+    url: "/about",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: ["/images/og-image.jpg"] },
 };
 
 export default function AboutPage() {

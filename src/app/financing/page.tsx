@@ -3,10 +3,20 @@ import Link from "next/link";
 import { CreditCardIcon } from "@/components/icons";
 import { financingFaqs, financingHighlights, financingSteps, site } from "@/lib/site";
 
+const title = "Financing | Pinky's Garage Doors";
+const description = "Flexible financing options for garage door repair, replacement, and installation in Phoenix, AZ.";
+
 export const metadata: Metadata = {
-  title: "Financing | Pinky's Garage Doors",
-  description:
-    "Flexible financing options for garage door repair, replacement, and installation in Phoenix, AZ.",
+  title,
+  description,
+  alternates: { canonical: "/financing" },
+  openGraph: {
+    title,
+    description,
+    url: "/financing",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: ["/images/og-image.jpg"] },
 };
 
 export default function FinancingPage() {

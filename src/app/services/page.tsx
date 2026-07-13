@@ -3,10 +3,21 @@ import Link from "next/link";
 import { serviceIconMap } from "@/components/icons";
 import { services, site } from "@/lib/site";
 
+const title = "Services | Pinky's Garage Doors";
+const description =
+  "Garage door repair, new garage doors, openers, and commercial doors in Phoenix, AZ. Honest recommendations and expert installation.";
+
 export const metadata: Metadata = {
-  title: "Services | Pinky's Garage Doors",
-  description:
-    "Garage door repair, new garage doors, openers, and commercial doors in Phoenix, AZ. Honest recommendations and expert installation.",
+  title,
+  description,
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title,
+    description,
+    url: "/services",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: ["/images/og-image.jpg"] },
 };
 
 export default function ServicesPage() {

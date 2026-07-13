@@ -3,6 +3,7 @@ import { Poppins, Kaushan_Script } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { serviceAreaCities, site } from "@/lib/site";
 
 const sans = Poppins({
   variable: "--font-sans",
@@ -16,10 +17,67 @@ const script = Kaushan_Script({
   weight: "400",
 });
 
+const siteUrl = "https://pinkysgaragedoors.com";
+const defaultTitle = "Pinky's Garage Doors | Phoenix, AZ";
+const defaultDescription =
+  "Garage doors done right. Repair, replace, or upgrade your garage door with honest recommendations, expert craftsmanship, and service you can count on. Serving Phoenix, AZ and Maricopa County.";
+
 export const metadata: Metadata = {
-  title: "Pinky's Garage Doors | Phoenix, AZ",
-  description:
-    "Garage doors done right. Repair, replace, or upgrade your garage door with honest recommendations, expert craftsmanship, and service you can count on. Serving Phoenix, AZ and Maricopa County.",
+  metadataBase: new URL(siteUrl),
+  title: defaultTitle,
+  description: defaultDescription,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: defaultTitle,
+    description: defaultDescription,
+    url: siteUrl,
+    siteName: site.name,
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: ["/images/og-image.jpg"],
+  },
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  name: site.name,
+  url: siteUrl,
+  telephone: site.phone,
+  email: site.email,
+  image: `${siteUrl}/images/og-image.jpg`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Phoenix",
+    addressRegion: "AZ",
+    addressCountry: "US",
+  },
+  areaServed: serviceAreaCities.map((city) => ({
+    "@type": "City",
+    name: city,
+  })),
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "07:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday"],
+      opens: "08:00",
+      closes: "14:00",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -30,6 +88,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${sans.variable} ${script.variable}`}>
       <body className="min-h-screen flex flex-col font-sans antialiased bg-cream text-ink">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
