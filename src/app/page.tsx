@@ -12,7 +12,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-ink text-cream">
         <Image
-          src="/images/truck-hero.png"
+          src="/images/truck-hero.jpg"
           alt="Pinky's Garage Doors service truck"
           fill
           priority
