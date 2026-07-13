@@ -5,6 +5,7 @@ export const site = {
   email: "info@pinkysgaragedoors.com",
   address: "Phoenix, AZ",
   serviceArea: "Serving all of Maricopa County",
+  licenseNumber: "ROC# 366803",
   hours: [
     { label: "Mon – Fri", value: "7:00am – 6:00pm" },
     { label: "Saturday", value: "8:00am – 2:00pm" },
@@ -124,7 +125,7 @@ export const values = [
 
 export const trustBar = [
   { title: "Same-Day Service", description: "Fast, reliable service when you need it." },
-  { title: "Licensed & Insured", description: "Fully licensed and insured for your peace of mind." },
+  { title: "Licensed, Bonded & Insured", description: "Fully licensed, bonded, and insured for your peace of mind." },
   { title: "5-Star Rated", description: "Hundreds of happy customers across Arizona." },
   { title: "Financing Available", description: "Flexible financing options to fit your budget." },
 ];

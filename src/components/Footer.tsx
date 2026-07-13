@@ -65,7 +65,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col gap-2 border-t border-cream/10 pt-6 text-xs text-cream/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Pinky&apos;s Garage Doors. All rights reserved.</p>
-          <p>Licensed &amp; Insured</p>
+          <p>Licensed, Bonded &amp; Insured — {site.licenseNumber}</p>
         </div>
       </div>
     </footer>
