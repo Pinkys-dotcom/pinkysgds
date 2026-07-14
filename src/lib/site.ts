@@ -1,7 +1,7 @@
 export const site = {
   name: "Pinky's Garage Doors",
-  phone: "602-499-9201",
-  phoneHref: "tel:16024999201",
+  phone: "480-901-0355",
+  phoneHref: "tel:14809010355",
   email: "info@pinkysgaragedoors.com",
   address: "Phoenix, AZ",
   serviceArea: "Serving all of Maricopa County",
