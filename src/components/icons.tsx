@@ -98,6 +98,14 @@ export function AwardIcon({ className }: IconProps) {
   );
 }
 
+export function PhoneIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke={base} strokeWidth="1.75" className={className}>
+      <path d="M5 4h3.5l1.5 5-2.3 1.7a11 11 0 0 0 5.6 5.6l1.7-2.3 5 1.5V19a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-1z" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function HomeIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke={base} strokeWidth="1.75" className={className}>

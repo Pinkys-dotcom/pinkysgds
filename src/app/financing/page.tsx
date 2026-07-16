@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { CreditCardIcon } from "@/components/icons";
+import TrackedLink from "@/components/TrackedLink";
 import { financingFaqs, financingHighlights, financingSteps, site } from "@/lib/site";
 
 const title = "Financing | Pinky's Garage Doors";
@@ -30,12 +30,14 @@ export default function FinancingPage() {
             Get the garage door you need today with flexible monthly payments that fit your
             budget. Apply in minutes—no impact to your credit score to check your rate.
           </p>
-          <Link
+          <TrackedLink
             href="/contact"
+            event="estimate_click"
+            location="financing_hero"
             className="mt-8 inline-block rounded-md bg-rose px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-rose-dark transition-colors"
           >
             Get Started
-          </Link>
+          </TrackedLink>
         </div>
       </section>
 
@@ -115,12 +117,15 @@ export default function FinancingPage() {
             </h2>
             <p className="mt-2 text-ink/80">Talk to our team about financing your next project.</p>
           </div>
-          <a
+          <TrackedLink
             href={site.phoneHref}
+            external
+            event="call_click"
+            location="financing_cta_banner"
             className="shrink-0 rounded-md bg-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-cream hover:bg-ink-soft transition-colors"
           >
             Call {site.phone}
-          </a>
+          </TrackedLink>
         </div>
       </section>
     </>

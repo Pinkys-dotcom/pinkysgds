@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { navLinks, services, site } from "@/lib/site";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function Footer() {
   return (
@@ -48,9 +49,15 @@ export default function Footer() {
             <h3 className="text-sm font-bold uppercase tracking-wide text-rose mb-4">Contact</h3>
             <ul className="space-y-2 text-sm text-cream/80">
               <li>
-                <a href={site.phoneHref} className="hover:text-rose transition-colors">
+                <TrackedLink
+                  href={site.phoneHref}
+                  external
+                  event="call_click"
+                  location="footer"
+                  className="hover:text-rose transition-colors"
+                >
                   {site.phone}
-                </a>
+                </TrackedLink>
               </li>
               <li>
                 <a href={`mailto:${site.email}`} className="hover:text-rose transition-colors">

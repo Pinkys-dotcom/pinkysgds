@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { serviceIconMap, ClockIcon, ShieldIcon, StarIcon, CreditCardIcon } from "@/components/icons";
 import ServiceAreaMap from "@/components/ServiceAreaMap";
+import TrackedLink from "@/components/TrackedLink";
 import { services, site, testimonials, trustBar, values } from "@/lib/site";
 
 const trustIcons = [ClockIcon, ShieldIcon, StarIcon, CreditCardIcon];
@@ -38,18 +39,23 @@ export default function Home() {
             expert craftsmanship, and service you can count on—right here in Phoenix, AZ.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link
+            <TrackedLink
               href="/contact"
+              event="estimate_click"
+              location="hero"
               className="rounded-md bg-rose px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-rose-dark transition-colors"
             >
               Get a Free Estimate
-            </Link>
-            <a
+            </TrackedLink>
+            <TrackedLink
               href={site.phoneHref}
+              external
+              event="call_click"
+              location="hero"
               className="rounded-md border border-cream/40 px-6 py-3 text-sm font-bold uppercase tracking-wide text-cream hover:bg-cream/10 transition-colors"
             >
               Call Now: {site.phone}
-            </a>
+            </TrackedLink>
           </div>
         </div>
       </section>
@@ -171,12 +177,14 @@ export default function Home() {
             </h2>
             <p className="mt-2 text-ink/80">Get the garage door you need today with easy financing options.</p>
           </div>
-          <Link
+          <TrackedLink
             href="/financing"
+            event="financing_click"
+            location="home_cta_banner"
             className="shrink-0 rounded-md bg-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-cream hover:bg-ink-soft transition-colors"
           >
             Learn More About Financing →
-          </Link>
+          </TrackedLink>
         </div>
       </section>
     </>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { navLinks, site } from "@/lib/site";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -36,18 +37,23 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <a
+            <TrackedLink
               href={site.phoneHref}
+              external
+              event="call_click"
+              location="header"
               className="text-sm font-semibold text-cream/90 hover:text-rose transition-colors"
             >
               {site.phone}
-            </a>
-            <Link
+            </TrackedLink>
+            <TrackedLink
               href="/contact"
+              event="estimate_click"
+              location="header"
               className="rounded-md bg-rose px-4 py-2.5 text-sm font-semibold text-ink hover:bg-rose-dark transition-colors"
             >
               Get a Free Estimate
-            </Link>
+            </TrackedLink>
           </div>
 
           <button
@@ -81,16 +87,24 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <a href={site.phoneHref} className="text-base font-semibold text-cream/90">
+            <TrackedLink
+              href={site.phoneHref}
+              external
+              event="call_click"
+              location="header_mobile_menu"
+              className="text-base font-semibold text-cream/90"
+            >
               {site.phone}
-            </a>
-            <Link
+            </TrackedLink>
+            <TrackedLink
               href="/contact"
-              onClick={() => setOpen(false)}
+              event="estimate_click"
+              location="header_mobile_menu"
+              onClickExtra={() => setOpen(false)}
               className="rounded-md bg-rose px-4 py-2.5 text-center text-sm font-semibold text-ink"
             >
               Get a Free Estimate
-            </Link>
+            </TrackedLink>
           </nav>
         </div>
       )}

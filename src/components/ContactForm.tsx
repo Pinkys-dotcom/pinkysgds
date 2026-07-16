@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { site } from "@/lib/site";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -23,6 +24,7 @@ export default function ContactForm() {
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("sent");
+      trackEvent("form_submit", { location: "contact_form" });
       form.reset();
     } catch {
       setStatus("error");
@@ -77,7 +79,7 @@ export default function ContactForm() {
       {status === "sent" && (
         <p className="text-sm text-ink/70">
           Thanks! Your request has been sent—we&apos;ll get back to you shortly. Prefer to call?{" "}
-          <a href={site.phoneHref} className="font-semibold text-rose">
+          <a href={site.phoneHref} onClick={() => trackEvent("call_click", { location: "contact_form_status" })} className="font-semibold text-rose">
             {site.phone}
           </a>
         </p>
@@ -85,7 +87,7 @@ export default function ContactForm() {
       {status === "error" && (
         <p className="text-sm text-ink/70">
           Something went wrong sending your request. Please call us instead at{" "}
-          <a href={site.phoneHref} className="font-semibold text-rose">
+          <a href={site.phoneHref} onClick={() => trackEvent("call_click", { location: "contact_form_status" })} className="font-semibold text-rose">
             {site.phone}
           </a>
           {" "}or email{" "}

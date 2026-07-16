@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import TrackedLink from "@/components/TrackedLink";
 import { site } from "@/lib/site";
 
 const title = "Contact | Pinky's Garage Doors";
@@ -40,9 +41,9 @@ export default function ContactPage() {
         <div className="space-y-8">
           <div>
             <h2 className="text-sm font-bold uppercase tracking-wide text-rose">Phone</h2>
-            <a href={site.phoneHref} className="mt-1 block text-2xl font-bold">
+            <TrackedLink href={site.phoneHref} external event="call_click" location="contact_page" className="mt-1 block text-2xl font-bold">
               {site.phone}
-            </a>
+            </TrackedLink>
           </div>
           <div>
             <h2 className="text-sm font-bold uppercase tracking-wide text-rose">Email</h2>

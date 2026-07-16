@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import { serviceIconMap } from "@/components/icons";
 import { services, site } from "@/lib/site";
 
@@ -49,12 +49,14 @@ export default function ServicesPage() {
                 </div>
                 <h2 className="text-2xl font-extrabold uppercase">{s.title}</h2>
                 <p className="mt-3 text-ink/70">{s.description}</p>
-                <Link
+                <TrackedLink
                   href="/contact"
+                  event="estimate_click"
+                  location={`service_${s.slug}`}
                   className="mt-6 inline-block rounded-md bg-rose px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-rose-dark transition-colors"
                 >
                   Get a Free Estimate
-                </Link>
+                </TrackedLink>
               </div>
               <div
                 className={`rounded-lg bg-ink-soft p-10 text-cream flex items-center justify-center ${
@@ -76,12 +78,15 @@ export default function ServicesPage() {
             </h2>
             <p className="mt-2 text-ink/80">Call us and we&apos;ll help you figure it out—no pressure.</p>
           </div>
-          <a
+          <TrackedLink
             href={site.phoneHref}
+            external
+            event="call_click"
+            location="services_cta_banner"
             className="shrink-0 rounded-md bg-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-cream hover:bg-ink-soft transition-colors"
           >
             Call {site.phone}
-          </a>
+          </TrackedLink>
         </div>
       </section>
     </>
