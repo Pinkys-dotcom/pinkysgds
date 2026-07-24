@@ -106,6 +106,20 @@ export default function RootLayout({
             gtag('config', 'G-RZYR99SVZ7');
           `}
         </Script>
+        <link
+          rel="stylesheet"
+          href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"
+          media="screen"
+        />
+        <Script
+          src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"
+          strategy="lazyOnload"
+          {...{
+            clienthub_id: "aba6013d-7320-4c1a-924c-e85d9784875f-4962085",
+            form_url:
+              "https://clienthub.getjobber.com/client_hubs/aba6013d-7320-4c1a-924c-e85d9784875f/public/work_request/embedded_work_request_form?form_id=4962085",
+          }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

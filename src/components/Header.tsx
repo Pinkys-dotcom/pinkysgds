@@ -47,12 +47,12 @@ export default function Header() {
               {site.phone}
             </TrackedLink>
             <TrackedLink
-              href="/contact"
-              event="estimate_click"
+              href="/book"
+              event="book_now_click"
               location="header"
               className="rounded-md bg-rose px-4 py-2.5 text-sm font-semibold text-ink hover:bg-rose-dark transition-colors"
             >
-              Get a Free Estimate
+              Book Now
             </TrackedLink>
           </div>
 
@@ -97,13 +97,13 @@ export default function Header() {
               {site.phone}
             </TrackedLink>
             <TrackedLink
-              href="/contact"
-              event="estimate_click"
+              href="/book"
+              event="book_now_click"
               location="header_mobile_menu"
               onClickExtra={() => setOpen(false)}
               className="rounded-md bg-rose px-4 py-2.5 text-center text-sm font-semibold text-ink"
             >
-              Get a Free Estimate
+              Book Now
             </TrackedLink>
           </nav>
         </div>
