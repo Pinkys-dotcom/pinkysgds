@@ -4,7 +4,7 @@ import { blogPosts } from "@/lib/blog";
 const siteUrl = "https://pinkysgaragedoors.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/services", "/financing", "/about", "/contact", "/blog"];
+  const routes = ["", "/services", "/financing", "/about", "/contact", "/blog", "/book"];
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${siteUrl}${route}`,

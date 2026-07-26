@@ -119,8 +119,8 @@ export default async function BlogPostPage({
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <TrackedLink
-              href="/contact"
-              event="estimate_click"
+              href="/book"
+              event="book_now_click"
               location="blog_post"
               className="rounded-md bg-rose px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-rose-dark transition-colors"
             >

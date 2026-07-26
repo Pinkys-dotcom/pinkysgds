@@ -50,8 +50,8 @@ export default function ServicesPage() {
                 <h2 className="text-2xl font-extrabold uppercase">{s.title}</h2>
                 <p className="mt-3 text-ink/70">{s.description}</p>
                 <TrackedLink
-                  href="/contact"
-                  event="estimate_click"
+                  href="/book"
+                  event="book_now_click"
                   location={`service_${s.slug}`}
                   className="mt-6 inline-block rounded-md bg-rose px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-rose-dark transition-colors"
                 >

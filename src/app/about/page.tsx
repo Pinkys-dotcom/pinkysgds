@@ -52,8 +52,8 @@ export default function AboutPage() {
             ))}
           </div>
           <TrackedLink
-            href="/contact"
-            event="estimate_click"
+            href="/book"
+            event="book_now_click"
             location="about_story"
             className="mt-8 inline-block rounded-md bg-rose px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-rose-dark transition-colors"
           >

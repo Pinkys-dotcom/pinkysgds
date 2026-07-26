@@ -36,8 +36,8 @@ export default function BookPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="rounded-lg border border-ink/10 bg-white p-4 shadow-sm sm:p-8">
+      <section className="mx-auto max-w-3xl px-2 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div className="overflow-hidden rounded-lg border border-ink/10 bg-white p-0 shadow-sm sm:p-8">
           <JobberEmbedLoader />
         </div>
       </section>
