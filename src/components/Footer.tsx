@@ -29,6 +29,11 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/blog" className="hover:text-rose transition-colors">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
 

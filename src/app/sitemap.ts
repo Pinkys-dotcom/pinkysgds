@@ -1,14 +1,24 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blog";
 
 const siteUrl = "https://pinkysgaragedoors.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/services", "/financing", "/about", "/contact"];
+  const routes = ["", "/services", "/financing", "/about", "/contact", "/blog"];
 
-  return routes.map((route) => ({
+  const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: route === "" ? 1 : 0.8,
   }));
+
+  const postEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${siteUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...postEntries];
 }
