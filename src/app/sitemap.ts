@@ -5,12 +5,20 @@ const siteUrl = "https://pinkysgaragedoors.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/services", "/financing", "/about", "/contact", "/blog", "/book"];
+  const legalRoutes = ["/privacy-policy", "/terms-of-service"];
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: route === "" ? 1 : 0.8,
+  }));
+
+  const legalEntries: MetadataRoute.Sitemap = legalRoutes.map((route) => ({
+    url: `${siteUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: "yearly",
+    priority: 0.3,
   }));
 
   const postEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
@@ -20,5 +28,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...postEntries];
+  return [...staticEntries, ...postEntries, ...legalEntries];
 }

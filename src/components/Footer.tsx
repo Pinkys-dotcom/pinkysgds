@@ -75,9 +75,17 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-cream/10 pt-6 text-xs text-cream/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-cream/10 pt-6 text-xs text-cream/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Pinky&apos;s Garage Doors. All rights reserved.</p>
-          <p>Licensed, Bonded &amp; Insured — {site.licenseNumber}</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p>Licensed, Bonded &amp; Insured — {site.licenseNumber}</p>
+            <Link href="/privacy-policy" className="hover:text-rose transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-service" className="hover:text-rose transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
