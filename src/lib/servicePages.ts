@@ -151,6 +151,100 @@ export const servicePages: ServicePage[] = [
     ],
     icon: "wrench",
   },
+  {
+    slug: "new-garage-doors",
+    title: "New Garage Doors",
+    shortTitle: "New Garage Doors",
+    metaDescription:
+      "New garage door installation in Phoenix, AZ. Carriage-house, modern, and classic raised-panel doors, expertly installed. Honest guidance, no upselling.",
+    heroTagline: "Stylish, durable doors that boost curb appeal and value.",
+    intro:
+      "A new garage door is one of the most visible parts of your home's exterior—and one of the highest-return upgrades you can make. Whether you're replacing a damaged door, upgrading an outdated one, or installing a door on a new opening, Pinky's Garage Doors handles the whole process, from picking a style to final installation.",
+    signsTitle: "Is It Time for a New Door?",
+    signs: [
+      "You've had multiple repairs in the past year or two",
+      "Panels are visibly dented, warped, or rusted",
+      "The door doesn't insulate well and you feel it in an attached garage",
+      "The style no longer matches your home, or you're prepping to sell",
+      "You're finishing a new garage opening that needs a first-time install",
+    ],
+    whatWeDoTitle: "What's Included",
+    whatWeDo: [
+      "On-site measurement and honest style, material, and budget guidance",
+      "Carriage-house, modern flush-panel, and classic raised-panel options",
+      "Full installation of door, track, springs, and hardware",
+      "Removal and haul-away of your old door, if applicable",
+      "Opener compatibility check and upgrade if needed",
+      "Full balance and safety testing before we leave",
+    ],
+    whyParagraph:
+      "We walk you through real style and price differences honestly—no pressure toward the most expensive option. Every door is installed by a licensed, insured crew and tested for proper balance and safety before the job is done.",
+    faqs: [
+      {
+        question: "How long does a new garage door installation take?",
+        answer:
+          "Most single-door installations are completed in half a day. Custom or oversized doors may take longer, which we'll walk you through before scheduling.",
+      },
+      {
+        question: "Can you match my home's existing style?",
+        answer:
+          "Yes—we offer a range of styles including carriage-house, modern flush panel, and classic raised panel, in finishes that match or upgrade your home's current look.",
+      },
+      {
+        question: "Should I repair my current door or get a new one?",
+        answer:
+          "If the issue is isolated to one part and the door is under 10-15 years old, repair usually makes sense. If you've had multiple repairs or visible panel damage, a new door is often the better long-term value—we'll give you a straight answer either way.",
+      },
+    ],
+    icon: "door",
+  },
+  {
+    slug: "garage-door-openers",
+    title: "Garage Door Openers",
+    shortTitle: "Openers",
+    metaDescription:
+      "Garage door opener repair and installation in Phoenix, AZ. Quiet belt-drive and smart openers, programmed and tested. Fast opener troubleshooting.",
+    heroTagline: "Quiet, reliable openers—repaired or installed right.",
+    intro:
+      "Your garage door opener does more work than any other part of the system, and when it fails, it can range from a simple sensor fix to needing a full replacement. Pinky's Garage Doors repairs and installs openers from every major brand, with technicians who diagnose the real issue before recommending a fix.",
+    signsTitle: "Signs Your Opener Needs Attention",
+    signs: [
+      "The opener runs but the door doesn't move",
+      "Remotes or keypads have stopped responding",
+      "The door reverses immediately or won't close",
+      "The opener grinds, strains, or is noticeably louder than it used to be",
+      "Safety sensor lights blink or won't stay aligned",
+    ],
+    whatWeDoTitle: "What's Included",
+    whatWeDo: [
+      "Motor, drive, and logic board diagnosis",
+      "Safety sensor alignment and replacement",
+      "Belt-drive, chain-drive, and smart Wi-Fi opener installation",
+      "Remote, keypad, and smartphone app programming",
+      "Battery backup options for monsoon-season power outages",
+      "Full auto-reverse and safety testing after any repair or install",
+    ],
+    whyParagraph:
+      "Not every opener problem means you need a new unit—we'll tell you honestly whether a repair makes sense or whether your opener has reached the end of its useful life, and walk you through real differences in noise level, features, and price if you're upgrading.",
+    faqs: [
+      {
+        question: "Why does my opener hum but not open the door?",
+        answer:
+          "This usually points to a failed capacitor, stripped gear, or a disconnected trolley—a common, usually inexpensive repair rather than a sign you need a new opener.",
+      },
+      {
+        question: "Belt-drive or chain-drive—which should I get?",
+        answer:
+          "Belt-drive openers run quieter and are a good fit for garages attached to living space or bedrooms above. Chain-drive openers are more affordable and hold up well for detached garages where noise matters less.",
+      },
+      {
+        question: "Do smart openers work during a power outage?",
+        answer:
+          "Most modern openers offer optional battery backup, which is worth considering in the Valley given monsoon-season outages. We can include this at installation.",
+      },
+    ],
+    icon: "opener",
+  },
 ];
 
 export function getServicePage(slug: string) {
