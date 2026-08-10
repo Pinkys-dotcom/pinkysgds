@@ -3,6 +3,7 @@ import Link from "next/link";
 import { serviceIconMap, ClockIcon, ShieldIcon, StarIcon, CreditCardIcon } from "@/components/icons";
 import ServiceAreaMap from "@/components/ServiceAreaMap";
 import TrackedLink from "@/components/TrackedLink";
+import { getServiceHref } from "@/lib/servicePages";
 import { services, site, testimonials, trustBar, values } from "@/lib/site";
 
 const trustIcons = [ClockIcon, ShieldIcon, StarIcon, CreditCardIcon];
@@ -94,7 +95,7 @@ export default function Home() {
                 <h3 className="text-lg font-bold">{s.title}</h3>
                 <p className="mt-2 text-sm text-ink/70">{s.summary}</p>
                 <Link
-                  href={`/services#${s.slug}`}
+                  href={getServiceHref(s.slug)}
                   className="mt-4 inline-block text-sm font-bold uppercase tracking-wide text-rose hover:text-rose-dark"
                 >
                   Learn More →

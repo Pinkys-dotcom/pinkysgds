@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
+import { servicePages } from "@/lib/servicePages";
 
 const siteUrl = "https://pinkysgaragedoors.com";
 
@@ -28,5 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...postEntries, ...legalEntries];
+  const serviceEntries: MetadataRoute.Sitemap = servicePages.map((s) => ({
+    url: `${siteUrl}/services/${s.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }));
+
+  return [...staticEntries, ...postEntries, ...legalEntries, ...serviceEntries];
 }

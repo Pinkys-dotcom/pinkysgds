@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { navLinks, services, site } from "@/lib/site";
+import { getServiceHref, servicePages } from "@/lib/servicePages";
 import TrackedLink from "@/components/TrackedLink";
+
+const extraServiceLinks = servicePages.filter(
+  (sp) => !services.some((s) => s.slug === sp.slug)
+);
 
 export default function Footer() {
   return (
@@ -42,8 +47,15 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-cream/80">
               {services.map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/services#${s.slug}`} className="hover:text-rose transition-colors">
+                  <Link href={getServiceHref(s.slug)} className="hover:text-rose transition-colors">
                     {s.title}
+                  </Link>
+                </li>
+              ))}
+              {extraServiceLinks.map((sp) => (
+                <li key={sp.slug}>
+                  <Link href={`/services/${sp.slug}`} className="hover:text-rose transition-colors">
+                    {sp.title}
                   </Link>
                 </li>
               ))}

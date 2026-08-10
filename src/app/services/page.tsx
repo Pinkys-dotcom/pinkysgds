@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import TrackedLink from "@/components/TrackedLink";
 import { serviceIconMap } from "@/components/icons";
+import { getServicePage, servicePages } from "@/lib/servicePages";
 import { services, site } from "@/lib/site";
+
+const extraServiceLinks = servicePages.filter(
+  (sp) => !services.some((s) => s.slug === sp.slug)
+);
 
 const title = "Services | Pinky's Garage Doors";
 const description =
@@ -49,14 +55,24 @@ export default function ServicesPage() {
                 </div>
                 <h2 className="text-2xl font-extrabold uppercase">{s.title}</h2>
                 <p className="mt-3 text-ink/70">{s.description}</p>
-                <TrackedLink
-                  href="/book"
-                  event="book_now_click"
-                  location={`service_${s.slug}`}
-                  className="mt-6 inline-block rounded-md bg-rose px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-rose-dark transition-colors"
-                >
-                  Get a Free Estimate
-                </TrackedLink>
+                <div className="mt-6 flex flex-wrap items-center gap-4">
+                  <TrackedLink
+                    href="/book"
+                    event="book_now_click"
+                    location={`service_${s.slug}`}
+                    className="inline-block rounded-md bg-rose px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink hover:bg-rose-dark transition-colors"
+                  >
+                    Get a Free Estimate
+                  </TrackedLink>
+                  {getServicePage(s.slug) && (
+                    <Link
+                      href={`/services/${s.slug}`}
+                      className="text-sm font-bold uppercase tracking-wide text-rose hover:text-rose-dark"
+                    >
+                      Learn More →
+                    </Link>
+                  )}
+                </div>
               </div>
               <div
                 className={`rounded-lg bg-ink-soft p-10 text-cream flex items-center justify-center ${
@@ -69,6 +85,31 @@ export default function ServicesPage() {
           );
         })}
       </section>
+
+      {extraServiceLinks.length > 0 && (
+        <section className="bg-ink-soft text-cream">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+            <h2 className="text-2xl font-extrabold uppercase sm:text-3xl">
+              More <span className="text-rose">Specialized Services</span>
+            </h2>
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {extraServiceLinks.map((sp) => (
+                <Link
+                  key={sp.slug}
+                  href={`/services/${sp.slug}`}
+                  className="rounded-lg border border-cream/10 bg-ink p-6 hover:border-rose transition-colors"
+                >
+                  <h3 className="text-lg font-bold">{sp.title}</h3>
+                  <p className="mt-2 text-sm text-cream/70">{sp.heroTagline}</p>
+                  <span className="mt-4 inline-block text-sm font-bold uppercase tracking-wide text-rose">
+                    Learn More →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-rose">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 flex flex-col items-center justify-between gap-6 sm:flex-row">
