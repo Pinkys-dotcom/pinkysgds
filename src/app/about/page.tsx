@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import TrackedLink from "@/components/TrackedLink";
-import { serviceAreaCities, site, values } from "@/lib/site";
+import { serviceAreas } from "@/lib/serviceAreas";
+import { site, values } from "@/lib/site";
 
 const title = "About | Pinky's Garage Doors";
 const description = "Meet Pinky's Garage Doors—Phoenix, AZ's honest, hard-working garage door team.";
@@ -94,9 +96,11 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="mt-10 columns-2 gap-8 sm:columns-3 lg:columns-4">
-          {serviceAreaCities.map((city) => (
-            <p key={city} className="mb-3 break-inside-avoid text-center sm:text-left">
-              {city}
+          {serviceAreas.map((area) => (
+            <p key={area.slug} className="mb-3 break-inside-avoid text-center sm:text-left">
+              <Link href={`/service-areas/${area.slug}`} className="hover:text-rose transition-colors">
+                {area.name}
+              </Link>
             </p>
           ))}
         </div>

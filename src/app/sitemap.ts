@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
 import { servicePages } from "@/lib/servicePages";
+import { serviceAreas } from "@/lib/serviceAreas";
 
 const siteUrl = "https://pinkysgaragedoors.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/services", "/financing", "/about", "/contact", "/blog", "/book"];
+  const routes = ["", "/services", "/financing", "/about", "/contact", "/blog", "/book", "/service-areas"];
   const legalRoutes = ["/privacy-policy", "/terms-of-service"];
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
@@ -36,5 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticEntries, ...postEntries, ...legalEntries, ...serviceEntries];
+  const areaEntries: MetadataRoute.Sitemap = serviceAreas.map((a) => ({
+    url: `${siteUrl}/service-areas/${a.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticEntries, ...postEntries, ...legalEntries, ...serviceEntries, ...areaEntries];
 }

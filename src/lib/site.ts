@@ -64,6 +64,7 @@ export const serviceAreaMapPoints: {
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/service-areas", label: "Service Areas" },
   { href: "/financing", label: "Financing" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
