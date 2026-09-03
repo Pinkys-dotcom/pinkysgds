@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { serviceIconMap, ClockIcon, ShieldIcon, StarIcon, CreditCardIcon } from "@/components/icons";
+import ReviewsWidget from "@/components/ReviewsWidget";
 import ServiceAreaMap from "@/components/ServiceAreaMap";
 import TrackedLink from "@/components/TrackedLink";
 import { getServiceHref } from "@/lib/servicePages";
@@ -154,14 +155,7 @@ export default function Home() {
             What Our <span className="text-rose">Customers Say</span>
           </h2>
         </div>
-        <div className="mx-auto max-w-3xl overflow-hidden rounded-lg border border-ink/10 bg-white shadow-sm">
-          <iframe
-            src="https://client.housecallpro.com/reviews/widget/1814669b-abe6-4c38-96ef-76e3fc8e7621"
-            title="Pinky's Garage Doors customer reviews"
-            className="h-[800px] w-full"
-            loading="lazy"
-          />
-        </div>
+        <ReviewsWidget />
       </section>
 
       {/* CTA banner */}
