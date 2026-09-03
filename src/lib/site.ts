@@ -175,21 +175,3 @@ export const financingFaqs = [
       "Yes. There's no penalty for paying off your plan ahead of schedule.",
   },
 ];
-
-export const testimonials = [
-  {
-    quote:
-      "Pinky's replaced our old garage door and opener in one day. The team was professional, honest, and the new door looks amazing!",
-    author: "James T.",
-  },
-  {
-    quote:
-      "Called about a broken spring and they had someone out same-day. Fair price, no upsell games. Exactly what they promised.",
-    author: "Marisol R.",
-  },
-  {
-    quote:
-      "Best contractor experience we've had in years. Clean install, cleaned up after themselves, and the door works perfectly.",
-    author: "Dave K.",
-  },
-];

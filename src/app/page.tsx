@@ -4,7 +4,7 @@ import { serviceIconMap, ClockIcon, ShieldIcon, StarIcon, CreditCardIcon } from 
 import ServiceAreaMap from "@/components/ServiceAreaMap";
 import TrackedLink from "@/components/TrackedLink";
 import { getServiceHref } from "@/lib/servicePages";
-import { services, site, testimonials, trustBar, values } from "@/lib/site";
+import { services, site, trustBar, values } from "@/lib/site";
 
 const trustIcons = [ClockIcon, ShieldIcon, StarIcon, CreditCardIcon];
 
@@ -154,18 +154,13 @@ export default function Home() {
             What Our <span className="text-rose">Customers Say</span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {testimonials.map((t) => (
-            <div key={t.author} className="rounded-lg border border-ink/10 bg-white p-6 shadow-sm">
-              <div className="mb-3 flex gap-0.5 text-rose">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <StarIcon key={i} className="h-4 w-4" />
-                ))}
-              </div>
-              <p className="text-sm text-ink/80">&ldquo;{t.quote}&rdquo;</p>
-              <p className="mt-4 text-sm font-bold">— {t.author}</p>
-            </div>
-          ))}
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-lg border border-ink/10 bg-white shadow-sm">
+          <iframe
+            src="https://client.housecallpro.com/reviews/widget/1814669b-abe6-4c38-96ef-76e3fc8e7621"
+            title="Pinky's Garage Doors customer reviews"
+            className="h-[800px] w-full"
+            loading="lazy"
+          />
         </div>
       </section>
 
