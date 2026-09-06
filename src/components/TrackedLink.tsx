@@ -11,6 +11,7 @@ type Props = {
   event: string;
   location: string;
   external?: boolean;
+  newTab?: boolean;
   onClickExtra?: () => void;
 };
 
@@ -21,6 +22,7 @@ export default function TrackedLink({
   event,
   location,
   external,
+  newTab,
   onClickExtra,
 }: Props) {
   const handleClick = () => {
@@ -30,7 +32,12 @@ export default function TrackedLink({
 
   if (external) {
     return (
-      <a href={href} className={className} onClick={handleClick}>
+      <a
+        href={href}
+        className={className}
+        onClick={handleClick}
+        {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
         {children}
       </a>
     );
