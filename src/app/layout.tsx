@@ -106,11 +106,6 @@ export default function RootLayout({
             gtag('config', 'G-RZYR99SVZ7');
           `}
         </Script>
-        <link
-          rel="stylesheet"
-          href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"
-          media="screen"
-        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

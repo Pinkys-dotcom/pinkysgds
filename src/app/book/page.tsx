@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import JobberEmbedLoader from "@/components/JobberEmbedLoader";
+import HouseCallProBooking from "@/components/HouseCallProBooking";
 import { site } from "@/lib/site";
 
 const title = "Book Now | Pinky's Garage Doors";
@@ -37,8 +37,8 @@ export default function BookPage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-2 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="overflow-hidden rounded-lg border border-ink/10 bg-white p-0 shadow-sm sm:p-8">
-          <JobberEmbedLoader />
+        <div className="overflow-hidden rounded-lg border border-ink/10 bg-white shadow-sm">
+          <HouseCallProBooking />
         </div>
       </section>
     </>
