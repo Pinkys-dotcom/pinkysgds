@@ -9,6 +9,15 @@ import { services, site, trustBar, values } from "@/lib/site";
 
 const trustIcons = [ClockIcon, ShieldIcon, StarIcon, CreditCardIcon];
 
+const recentWork = [
+  { src: "/images/work/white-two-story.jpg", alt: "New white garage door with windows on a two-story home" },
+  { src: "/images/work/dark-three-car.jpg", alt: "Three-car garage with two new dark modern garage doors" },
+  { src: "/images/work/brown-truck-hood.jpg", alt: "New wood-grain brown garage door with a Pinky's service truck in the foreground" },
+  { src: "/images/work/modern-glass.jpg", alt: "Modern full-view glass and aluminum garage door" },
+  { src: "/images/work/white-yard-sign.jpg", alt: "Freshly installed white garage door with a Pinky's Garage Doors yard sign" },
+  { src: "/images/work/brown-pavers.jpg", alt: "Brown garage doors on a stone-accented home with a paver driveway" },
+];
+
 export default function Home() {
   return (
     <>
@@ -145,6 +154,31 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Recent work */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-extrabold uppercase sm:text-4xl">
+            Our <span className="text-rose">Recent Work</span>
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-ink/70">
+            Real doors, installed by our team across the Phoenix metro.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {recentWork.map((photo) => (
+            <div key={photo.src} className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-sm">
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          ))}
         </div>
       </section>
 
